@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/adminpages/changePassword.css' %}">
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+</head>
+<body>
+    <h1>Password changed successfully!</h1>
+
+    <script>
+        // Wait for 2 seconds (2000 milliseconds)
+        setTimeout(() => {
+            window.location.href = "{% url redirect_url %}";
+        }, 1500);
+    </script>
+</body>
+</html>

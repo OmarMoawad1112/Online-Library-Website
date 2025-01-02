@@ -1,0 +1,57 @@
+@font-face {
+    font-family: Bitter;
+    src: url(../../Bitter/Bitter-VariableFont_wght.ttf);
+}
+
+body{
+    margin : 0 ;
+    padding : 0 ;
+    background-image: url(../../images/coverAdmin.jpg);
+}
+
+form:hover{
+    transform : scale(1.1) ;
+    transition : transform 0.3s ease ;
+}
+h1{
+    font-size: 2em;
+    color : white ;
+    text-align: center ;
+}
+form{
+    margin-top: 10em ;
+    margin-left: auto ;
+    margin-right: auto ;
+    padding : 1.5em ;
+    width : fit-content ;
+}
+
+label{
+    font-size : 2em ;
+}
+input{
+    font-size : 1.5em ;
+    border-radius: 25px;
+    border: 2px solid transparent;
+}
+::placeholder{
+    padding: 10px;
+    font-size: medium;
+}
+input[type="submit"] {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: transparent;
+    border: 2px solid transparent;
+    color: aliceblue;
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+  }
+    input[type="submit"]:hover {
+    color: black;
+    background-color: aliceblue;
+}
+
+
+
+  

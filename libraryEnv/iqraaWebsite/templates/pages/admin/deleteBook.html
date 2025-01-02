@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete-Book</title>
+    {% load static %}
+    <!-- Link to an external CSS file for styling the page -->
+    <link rel="stylesheet" href="{% static 'css/adminpages/editBook.css' %}">
+    <link rel="stylesheet" href="{% static 'css/navBar.css' %}">
+
+</head>
+<body>
+    <div class = "mainPage">
+        {% include 'pages/admin/navBar.html'%}
+        <h1>Delete-Book</h1>
+        <form action="{% url 'deleteBookPage' %}" method="post" id="deleteForm">
+            {% csrf_token %}
+            <label for="bookIdInput">Book ID</label><br>
+            <input type="text" name="book_id" id="bookIdInput" required><br>
+            <input class="submit" type="submit" value="Delete Book" id="addDelete">
+        </form>
+    </div>
+   <!--<script src="{% static 'js/adminpages/deleteBookForm.js' %}"></script> --> 
+</body>
+</html>

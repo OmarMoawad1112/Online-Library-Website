@@ -1,0 +1,100 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/navBar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main/signUp.css' %}">
+    <script>
+            function validation() {
+            
+            var username = document.getElementById('uname').value;
+            var password = document.getElementById('pass').value;
+            var confirmPassword = document.getElementById('cpass').value;
+            var email = document.getElementById('em').value;
+            var isAdmin = document.getElementById('is_admin').checked;
+
+            if(username.length < 5) {
+                document.getElementById('username').innerHTML = 'Username must be at least 5 characters long.' ;
+                event.preventDefault(event) ;
+            }
+            else if(username.includes(' ')) {
+                document.getElementById('username').innerHTML = 'Username cannot contain spaces.' ;
+                event.preventDefault(event) ;
+            }
+            else{
+                document.getElementById('username').innerHTML = '' ;
+            }
+
+            if(password !== confirmPassword) {
+                document.getElementById('confirmpassword').innerHTML = 'Passwords do not match. Please try again.' ;
+                event.preventDefault(event) ;
+            }
+            else{
+                document.getElementById('confirmpassword').innerHTML = '' ;
+
+            }
+
+            if( !/\d/.test(password) ) {
+                document.getElementById('password').innerHTML = 'password must contain at least one digit ' ;
+                event.preventDefault(event) ;
+            }
+
+            else if( !/[!#$%*@]/.test(password)) {
+                document.getElementById('password').innerHTML = 'please enter one of the following special characters: !, #, $, %, or *' ;
+                event.preventDefault(event) ;
+            }
+            else if(password.length < 8 ) {
+                document.getElementById('password').innerHTML = 'Password must be at least 8 characters long' ;
+                event.preventDefault(event) ;
+            }
+            else{
+                document.getElementById('password').innerHTML = '' ;
+
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="mainPage">
+        <nav>
+            <ul>
+                <li><a href="{% url 'index' %}">Home</a></li>      
+            </ul>
+        </nav>
+        <div class="mainContainer">
+            <h1>SIGN UP</h1>
+            <form method="post" onsubmit="return validation(event)">
+                {% csrf_token %}
+                <div>
+                    <label for="uname">Username</label><br>
+                    <input type="text" id="uname" name="uname" required >
+                    <p id="username" class="error-message"></p>
+                </div>
+                <div>
+                    <label for="pass">Password</label><br>
+                    <input type="password" id="pass" name="pass" required>   
+                    <p id="password" class="error-message"></p>    
+                </div>
+                <div>
+                    <label for="cpass">Confirm password</label><br>
+                    <input type="password" id="cpass" name="cpass" required>
+                    <p id="confirmpassword" class="error-message"></p>
+                </div>
+                <div>
+                    <label for="em">E-mail</label><br>
+                    <input type="email" id="em" name="em" required>
+                    <p id="email" class="error-message"></p>
+                </div> 
+                <div class="checkbox">
+                    <input type="checkbox" id="is_admin" name="is_admin" value="1">
+                    <label for="is_admin">is_admin</label>
+                </div>
+                <div class="submit">
+                    <input type="submit" value="Submit" id="submit">
+                </div>
+            </form> 
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <!-- Link to an external CSS file for styling the page -->
+    <link rel="stylesheet" href="{% static 'css/adminpages/editBook.css' %}">
+    <link rel="stylesheet" href="{% static 'css/navBar.css' %}">
+
+    <title>Edit book</title>
+</head>
+<body>
+    <div class = "mainPage">
+        {% include 'pages/admin/navBar.html'%}
+        <h1>Edit-Book</h1>
+        
+        <form method="post">
+            {% csrf_token %}
+            <!--form.as_p means the form-->
+            {{ form.as_p }}
+            <input type="submit" value="Save Changes">
+        </form>
+
+    </div>
+   <!--<script src="{% static 'js/adminpages/editBook.js' %}"></script>>--> 
+    <br>
+    <br>
+    <br>
+    
+</body>
+</html>

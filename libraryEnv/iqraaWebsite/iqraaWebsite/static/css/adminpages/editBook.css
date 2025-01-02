@@ -1,0 +1,134 @@
+@font-face {
+  font-family: Bitter;
+  src: url(../../Bitter/Bitter-VariableFont_wght.ttf);
+}
+  
+  html {    
+      font-family: "Bitter", serif;
+      font-optical-sizing: auto;
+      font-weight: 500;
+      font-style: normal;
+  }
+  
+  body {
+      margin: 0 ; 
+      padding: 0 ;     
+      background: antiquewhite;
+      background-repeat: no-repeat;  
+  }
+  
+  
+  ul{
+    display : flex ;
+    list-style-type: none ;
+    margin-top : 0 ;
+    flex-wrap: wrap ;
+  }
+  
+  .mainPage{
+    width : 100% ;
+  }
+  
+  nav{
+    background-color:#ae6b4b ;
+    height : 4em ;
+    width: 100%;
+  }
+  
+  li{
+    margin : 1.5em ;
+    margin-top : 1em ;
+  }
+  
+  li a {
+    display : block ;
+    text-decoration: none ;
+    padding : auto ;
+    margin-right : 2em ;
+    color : white ;
+    font-size :1.5em;
+  }
+  
+  ul li a:hover{
+    text-decoration:none;
+    color : #AAAAAA ;
+    transition : color 0.1s;
+  }
+
+  h1 {
+    text-align: center;
+    scale: 1.5;
+    margin: 50px auto;
+    padding-bottom: 10px;
+    width: fit-content;
+    border-bottom: 2px solid #714835;
+    color: #714835;
+    /* text-shadow: 2px 2px  white; */
+  }
+
+  .editForm {
+    text-align: center;
+  }
+
+  form{
+    text-align: center;
+    width : 30% ;
+    margin : 2em auto;
+  }
+
+  input {
+    text-align: center;
+    scale: 1.2;
+    display: block;
+    margin: 5px auto;
+    background-color: antiquewhite; /* #f7e7ce */
+    color: #714835;
+    border: 0;
+    border-bottom: 1px solid #714835;
+}
+
+label {
+  text-align: center;
+}
+
+form {
+  margin-bottom: 0px;
+  /* border-bottom: 1px solid #804e38; */
+}
+
+form input, textarea {
+  margin-bottom: 25px;
+}
+
+.submit {
+  font-family: Bitter;
+  border: 0;
+  background-color: #714835;
+  border-radius: 3px;
+  color: antiquewhite;
+  padding: 5px;
+  font-size: 10px;
+}
+.button{
+  text-align: center ;
+  margin : 0.5em ;
+}
+button:hover{
+  transition : background-color 0.5s ease ;
+  background-color : #4d3023;
+}
+button {
+    font-family:  "Bitter", serif;
+    font-size: 13px;
+    float: center;
+    color : #fff ;
+    background-color: #8b553c;
+    padding : 7px 10px;
+    border-radius : 3px;
+    border: 0;
+}
+
+.submit:hover {
+  background-color: #3a2419;
+  transition: background-color 0.3s;
+}

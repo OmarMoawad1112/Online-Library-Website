@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/navBar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main/bookDescription.css' %}">
+    <title>{{book.name}}</title>
+</head>
+<body>
+    <div class = "mainPage">
+        {% include 'pages/user/navBar.html'%}
+
+        <h1>{{book.name}} - {{book.author}}</h1>
+        <div id="image">
+            <img src="{{book.image.url}}" alt="{{book.name}}" width="400px">
+        </div>
+        <div class = "bookDescription">
+            <h2>Book ID: {{book.id}}</h2>
+            <h2><strong>{{book.category}}</strong></h2>
+            <div class = "description">
+                {{book.description}}
+            <div>
+            <div class = "button">
+                <form action="{% url 'borrow_book' book.id %}" method="post" onsubmit="return confirmBorrow() ;">
+                    {% csrf_token %}
+                    <button type="submit" id="myButton">Borrow</button>
+                </form>
+            </div>
+        </div>
+        <script>
+            function confirmBorrow() {
+                return confirm("Are you sure you want to borrow this book?");
+            }
+            function displayMessage(messages){
+                window.alert(message[messages.length()-1]) ;
+            }
+        </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+@font-face {
+    font-family: Bitter;
+    src: url(../../Bitter/Bitter-VariableFont_wght.ttf);
+}
+
+body{
+    margin : 0 ;
+    padding : 0 ;
+    background-image: url(../../images/contactUs.jpg);
+    background-size : cover ;
+    background-repeat : no-repeat ;
+}
+ul{
+    display : flex ;
+    list-style-type: none ;
+    margin-top : 0 ;
+}
+a {
+    display : block ;
+    text-decoration: none ;
+    padding : auto ;
+    margin-right : 2em ;
+    color : white ;
+    font-size :1.5em;
+}
+
+/* hover is a pseudo-class selector*/
+ul li a:hover 
+{ 
+    background-color :red;
+    border-radius: 100% ;
+    text-align: center ;
+}
+nav{
+    margin-left : 1em ;
+    margin-right : 1em ;
+    background-color:black ;
+    margin-top : 1em ;
+    padding-top : 0 ;
+    height : 4em ;
+    border-radius: 10em ;
+}
+nav:hover{
+    transform : scale(1.2) ;
+    transition : transform 0.5s ease ;
+}
+li{
+    margin : 1.5em ;
+    margin-top : 1em ;
+}
+h2{
+    color : white ;
+    margin-bottom: 0.2em ;
+}
+input{
+    height: 2em ;
+}
+#container{
+    font-size: 1em  ;
+    margin-left  : 4em ;
+}
+.mainPage{
+    width : 80% ;
+    max-width: 1200px;
+    margin : 0 auto ;
+}
+
+input {
+    border-radius: 2em ;
+}
+form{
+    width : 30% ;
+    padding : 10px ;
+}

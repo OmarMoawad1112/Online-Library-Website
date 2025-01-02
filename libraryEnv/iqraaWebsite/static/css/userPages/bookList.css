@@ -1,0 +1,88 @@
+@font-face {
+  font-family: Bitter;
+  src: url(../../Bitter/Bitter-VariableFont_wght.ttf);
+}
+
+html {    
+    font-family: "Bitter", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+body {
+    margin: 0 ; 
+    padding: 0 ;     
+    background: #f7e7ce;
+    background-repeat: no-repeat;  
+}
+
+
+ul{
+  display : flex ;
+  list-style-type: none ;
+  margin-top : 0 ;
+  flex-wrap: wrap ;
+}
+
+.mainPage{
+  width : 100% ;
+}
+h1{
+  text-align: center ;
+  font-size: 2em ;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 14px;
+    width: 100%;
+    height: 450px;
+}
+
+.mainContainer{
+    width: 100% ;
+    display: inline-grid;
+    grid-template-columns: auto auto auto auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: auto;
+    padding-right: auto;
+}
+
+.imageContainer {
+    position: relative;
+    box-shadow: 6px 6px 0px #c68d72;
+    background-color: #8b553c;
+    position: relative;
+    margin: 20px auto;
+    width: 300px;
+    height: 505px;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+}
+
+a {
+  display: block ;
+  text-decoration: none ;
+  color : #fffff3;
+  font-size: 1.5em ;
+}
+
+bName {
+    position: absolute;
+    bottom: 5px ;
+    scale: 0.1;
+}
+
+.imageContainer:hover {
+  box-shadow: 14px 14px 0px #c68d72;
+  img {
+    transform : scale(1.05) ;
+    transition: transform 0.3s ease;
+  }
+  transition: img 0.3s, box-shadow 0.3s;
+}
+

@@ -1,0 +1,47 @@
+@font-face {
+    font-family: Bitter;
+    src: url(../../Bitter/Bitter-VariableFont_wght.ttf);
+}
+
+ul{
+    display : flex ;
+    list-style-type: none ;
+    margin-top : 0 ;
+    flex-wrap: wrap ;
+}
+ul li a {
+    display : block ;
+    text-decoration: none ;
+    padding : auto ;
+    margin-right : 2em ;
+    color : white ;
+    font-size :1.5em;
+}
+.mainPage{
+    width : 80% ;
+    max-width: 1200px;
+    margin : 0 auto ;
+}
+nav{
+    margin-left : 1em ;
+    margin-right : 1em ;
+    background-color:black ;
+    margin-top : 1em ;
+    padding-top : 0 ;
+    height : 4em ;
+    border-radius: 10em ;
+}
+ul li a:hover 
+{ 
+    background-color :red;
+    border-radius: 100% ;
+    text-align: center ;
+}
+li:hover{
+    transform : scale(1.1) ;
+    transition : transform 0.3s ease ;
+}
+li{
+    margin : 1.5em ;
+    margin-top : 1em ;
+}

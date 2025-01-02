@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/navBar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+    <title>About The Store</title>
+</head>
+<body>
+    <div class = "mainPage">
+        {% include 'pages/main/navBar.html' %}
+
+        <div class = "container">
+            <p>
+                About Iqra'a <br><br>
+                We're currently working on
+                a project for a student-focused
+                bookstore. Please note that this 
+                isn't an operational bookstore,
+                 and you won't find any books
+                 available for purchase here.
+                herefore, kindly refrain
+                from contacting us for book purchases.<br>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

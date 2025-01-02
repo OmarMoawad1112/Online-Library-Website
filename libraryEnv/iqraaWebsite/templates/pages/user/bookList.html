@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel = "stylesheet" href = "{% static 'css/navBar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bookList.css' %}">
+    <title>Books</title>
+</head>
+<body>
+    <div class =  "mainPage">
+        {% include 'pages/user/bookListNavBar.html'%}
+        <div class = "mainContainer">
+            {% for book in books %}
+                <div class = "imageContainer">
+                    <a href="{% url 'userBookDetails' book.id %}">
+                        <img src="{{book.image.url}}" alt="{{book.name}}">
+                        <div class="bName">{{book.name}}</div>
+                    </a>  
+                </div>  
+            {% endfor %} 
+        </div>
+    </div>
+    <script>
+        document.getElementById('search-input').addEventListener('keypress',function(){
+            if(event.key === 'Enter'){
+                var search = document.getElementById('search-input').value;
+                if(search.trim() !== ''){
+                    window.location.href = '{% url "userBooks" %}?search='+encodeURIComponent(search);
+                }
+                else{
+                    window.location.href = '{% url "userBooks" %}';
+                }
+            }
+            
+        });
+    </script>
+</body>
+</html>

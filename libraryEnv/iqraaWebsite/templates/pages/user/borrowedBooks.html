@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Borrowed Books</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/button.css' %}">
+    <link rel="stylesheet" href="{% static 'css/navBar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/userPages/borrowedBooks.css' %}">
+</head>
+<body>
+    <div class="mainPage">
+        {% include 'pages/user/navBar.html'%}
+        <h1>Borrowed-Books</h1>
+        <div class="mainContainer">
+            {% if books %}
+                {% for book in books %}
+                    <div class="imageContainer">
+                        <a href="">
+                            <img src="{{book.image.url}}" alt="{{book.name}}">
+                            <div class="bName">{{book.name}}</div>
+                        </a> 
+                    </div>
+                    <div class = "unborrowButton">
+                        <a href="{% url 'unborrow_book' book.id %}">
+                            <button>Un-Borrow</button>  
+                        </a>
+                    </div>
+                {% endfor %}       
+            {% else %}
+                <p>No borrowed books found.</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+
+button{
+    font-size: 18px ;
+    font-weight: 1000px ;
+    text-decoration: none;
+    width: 60% ;
+    padding : 1.5em;
+    color: antiquewhite;
+    background-color: #ae6b4b;
+    border-radius: 2px;
+    font-family: "Bitter", serif;
+    box-shadow: 0px 1px antiquewhite;
+}
+
+button:hover{
+    color: bisque;
+    background-color: #804e38;
+    box-shadow: 0px 4px antiquewhite;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    border-bottom: 5px solid white ;
+}

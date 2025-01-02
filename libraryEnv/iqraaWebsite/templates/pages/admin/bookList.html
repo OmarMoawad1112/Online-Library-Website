@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <!-- Link to an external CSS file for styling the page -->
+    <link rel="stylesheet" href="{% static 'css/bookList.css' %}">
+    <link rel="stylesheet" href="{% static 'css/navBar.css' %}">
+
+    <title>Books</title>
+    <style>
+        .modal-content{
+            background-image: url("{% static 'image/addBook.jpg' %}")  ;
+        }
+    </style>
+</head>
+<body>
+    <div class="mainPage">
+        {% include 'pages/admin/navBar.html'%}
+        <div class="mainContainer" id="mainContainer">
+            {% for book in allbooks %}
+                <div class="imageContainer" id="{{book.id}}">
+                    <a href="{% url 'adminBookDetails' book.id %}">
+                        <img src="{{book.image.url}}" alt="{{book.name}}">
+                        <div class="bName">{{book.name}}</div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div> 
+    </div>
+    <script src="{% static 'js/adminpages/bookList.js' %}"></script>
+    <script>
+        document.getElementById('search-input').addEventListener('keypress', function(event){
+            if(event.key === 'Enter'){
+                var search = document.getElementById('search-input').value;
+                if(search.trim() !== ''){
+                    window.location.href = '{% url "adminBooks" %}?search=' + encodeURIComponent(search);
+                } else {
+                    window.location.href = '{% url "adminBooks" %}';
+                }
+            }
+        });
+        document.getElementById('addBookForm').addEventListener('submit' , function(){
+
+        })
+    </script>
+</body>
+</html>

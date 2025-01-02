@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/navBar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+</head>
+<body>
+    <div class="mainPage">
+        {% include 'pages/main/navBar.html' %}
+        <br><br>
+
+        <h1>Contact Iqraa</h1>
+
+        <br>
+
+        <div class="mainContainer">
+            <form>
+                <input type="text" placeholder="Name" required><br>
+                <input type="tel" placeholder="Phone" required><br>
+                <input type="email" placeholder="Email" required><br>
+                <input type="text" placeholder="Message" required><br><br>
+                <input type="submit" class="send" value="Send">
+            </form>
+        
+            <br><br><br>
+        
+            <div class="phoneNumber">
+                ☎  19019
+            </div>
+            <div class ="socialMedia">
+                <div class="socialMediaCell">
+                    <a href="mailto:customerservice@gmail.com" target="_blank">
+                        <img src="{% static 'image/gmail.jpeg' %}" alt="gmail-photo">
+                    </a>
+                </div>
+                <div class="socialMediaCell">
+                    <a href="https://www.facebook.com/" target="_blank">
+                        <img src="{% static 'image/facebook1.jpg' %}" alt="facebook-image">
+                    </a>
+                </div>
+                <div class="socialMediaCell">
+                    <a href="https://www.instagram.com/" target="_blank">
+                        <img src="{% static 'image/instagram-6-xxl.png' %}" alt="instagram-image">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

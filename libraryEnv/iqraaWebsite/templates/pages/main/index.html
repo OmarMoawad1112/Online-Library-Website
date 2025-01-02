@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/navBar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main/index.css' %}">      
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="mainPage">
+        {% include 'pages/main/navBar.html' %}
+        <div class="container">
+        <h1 class="logo">Iqraa Account</h1>
+            <form method="post">
+                {% csrf_token %}
+                <label class="label" for="Username">Username</label><br>
+                <input type="text" id="Username" name="uname" required><br>
+                <label class="label" for="Password">Passowrd</label><br>
+                <input type="password" id="Password" name="password" required><br>
+                {% if messages %}
+                    <div class="messages">
+                        {% for message in messages %}
+                            {% if forloop.last %}
+                                <div class="alert {% if message.tags %}{{ message.tags }}{% endif %}">
+                                    {{ message }}
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+                <div><input class="login" type="submit" value="Login" id="login"></div>
+                <div><a href="{% url 'signup' %}" id = "signUp" class="signUp">Don't have an account</a></div>
+            </form>   
+        </div>
+    </div>
+    <script src="{% static 'js/main/index.js' %}"></script>
+</body>
+</html>

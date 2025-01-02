@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/navBar.css' %}">  
+    <link rel="stylesheet" href="{% static 'css/main/index.css' %}">   
+</head>
+<body>
+    <div class="mainPage">
+        {% include 'pages/user/navBar.html'%} 
+        <div class = "quote">
+            the more you learn the more you know
+        </div>
+    </div>
+    <script src="{% static 'js/main/index.js' %}"></script>
+</body>
+</html>

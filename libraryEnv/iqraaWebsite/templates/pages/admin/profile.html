@@ -1,0 +1,92 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+ <head> 
+  <meta charset="UTF-8" /> 
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/userPages/profile.css' %}" /> 
+  <link rel="stylesheet" href="{% static 'css/navBar.css' %}">
+
+  <title>Profile</title> 
+ 
+  <style></style> 
+ </head> 
+ <body> 
+  <div class="mainPage"> 
+    {% include 'pages/admin/profileNavBar.html'%}
+   <script>
+    function x(event) {
+        let char = String.fromCharCode(event.which);
+        if (!(/[0-9]/.test(char))) {
+            alert('invalid phone number')
+            event.preventDefault();
+        }
+    }
+    </script>
+   <div class="profile-container"> 
+    <h2 class="lbl">Admin Profile</h2> 
+    <div class="profile-photo"> 
+     <img src="{{data.userImage.url}}" alt="Profile Photo" /> 
+    </div> 
+    <div class="form-group">
+     <form method="post" enctype="multipart/form-data">
+            {% csrf_token %} 
+            <div> 
+                <input id="addimage" type="file" name="image" accept="image/*" hidden>
+                <label for="addimage" class="lbl">Add Image</label>         
+             </div>
+     <label class="lbl" for="username">Username:</label> 
+     <input 
+      type="text" 
+      id="username" 
+      name="username" 
+      value="{{data.username}}" 
+      placeholder="Enter your username" 
+      disabled 
+     /> 
+        </div>
+        <div class="form-group"> 
+     <label class="lbl" for="email">Email:</label> 
+     <input 
+      type="email" 
+      id="email" 
+      name="email" 
+      value="{{data.email}}" 
+      placeholder="Enter your email" 
+      disabled 
+        /> 
+        </div>
+        <div class="form-group"> 
+        <label class="lbl" for="Address">Address:</label> 
+        <input 
+         type="text" 
+         id="Address" 
+         name="Address" 
+         value="{{data.address}}" 
+         placeholder="Enter your Address" 
+        /> 
+       </div> 
+       <div class="form-group"> 
+        <label class="lbl" for="phone">phone:</label> 
+        <input 
+         type="text" 
+         id="phone" 
+         name="phone" 
+         value="{{data.phoneNumber}}" 
+         placeholder="Enter your phone" 
+         onsubmit=x(event)
+        /> 
+        <div class="links-container"> 
+            <input type="submit" id="change" name="change" value="modify">
+        </div> 
+     </form>
+    </div> 
+        
+    <div class="links-container"> 
+     <a href="{% url 'adminChangePassword' %}">Change Password</a> 
+    </div> 
+   </div> 
+ 
+  </div> 
+ </body> 
+</html> 
+ 
